@@ -7,7 +7,6 @@ n_trials_SH = 200;
 n_trials_LH = 200;
 
 first_LH = firstapples(:,10)/n_trials_LH;
-
 score_SH = behaviour(:,11)/n_trials_SH;
 score_LH = behaviour(:,10)/(6*n_trials_LH);
 
