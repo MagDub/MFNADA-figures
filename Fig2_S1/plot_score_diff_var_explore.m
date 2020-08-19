@@ -68,8 +68,8 @@ errorbar([1:6],[nanmean(mean_explored)],[nanstd(mean_explored)./sqrt(n)],'.','co
 ylim([-1.8 1.8])
 set(gca,'YTick',-3:1:3)
 set(gca,'XTick',1:1:6)
-ylabel('Increase in reward')
-xlabel('trial')
+ylabel({'Increase in reward'}','FontName','Arial','Fontweight','bold','FontSize',12);
+xlabel('Sample')
 
 %% Export
 addpath('../../export_fig/')

@@ -1,3 +1,4 @@
+clear;
 
 load('../data_for_figs/RT_all_LH_desc.mat')
 load('../data_for_figs/RT_all_LH.mat')
@@ -23,7 +24,7 @@ plot([1:6],nanmean(RT_all_LH,1),'LineWidth',1, 'Color',[col(2,:) 1]); hold on;
 errorbar([1:6],[nanmean(RT_all_LH)],[nanstd(RT_all_LH)./sqrt(n)],'.','color','k');
 
 plot(1*ones(1,60)+noise_plot, RT_all_LH(:,1),'.','MarkerEdgeColor',col(1,:), 'MarkerSize',3); hold on;
-plot(2*ones(1,60)+noise_plot, RT_all_LH(:,2),'.','MarkerEdgeColor',col(2,:), 'MarkerSize',3); hold on;
+plot(2*ones(1,60)+noise_plot, RT_all_LH(:,2),'.','MarkerEdgeColor',col(1,:), 'MarkerSize',3); hold on;
 plot(3*ones(1,60)+noise_plot, RT_all_LH(:,3),'.','MarkerEdgeColor',col(1,:), 'MarkerSize',3); hold on;
 plot(4*ones(1,60)+noise_plot, RT_all_LH(:,4),'.','MarkerEdgeColor',col(1,:), 'MarkerSize',3); hold on;
 plot(5*ones(1,60)+noise_plot, RT_all_LH(:,5),'.','MarkerEdgeColor',col(1,:), 'MarkerSize',3); hold on;
@@ -33,7 +34,7 @@ ylim([0 3100])
 xlim([0 7])
 set(gca,'YTick',0:750:3000)
 set(gca,'XTick',1:6)
-ylabel('Reaction time (ms)')
+ylabel({'Reaction time (ms)'}','FontName','Arial','Fontweight','bold','FontSize',12);
 xlabel('Sample')
 
 %% Export
