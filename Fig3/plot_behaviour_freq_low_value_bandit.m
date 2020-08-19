@@ -8,6 +8,13 @@ n_trials_LH = 200;
 pickedD_SH_perc = behaviour(:,9)/n_trials_SH*100;
 pickedD_LH_perc = behaviour(:,5)/n_trials_LH*100;
 
+%% Save
+low_value_SH = pickedD_SH_perc;
+low_value_LH = pickedD_LH_perc;
+
+save('../data_for_figs/low_value_SH.mat', 'low_value_SH');
+save('../data_for_figs/low_value_LH.mat', 'low_value_LH');
+
 %% Drugs
 load('../data_for_figs/drug_code.mat') %0: placebo, 1:amisulpride, 2:propranolol
 idx_plc = find(drug_code(:,2)==0);

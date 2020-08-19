@@ -11,6 +11,13 @@ first_LH = firstapples(:,10)/n_trials_LH;
 score_SH = behaviour(:,11)/n_trials_SH;
 score_LH = behaviour(:,10)/(6*n_trials_LH);
 
+%% Save
+save('../data_for_figs/first_LH.mat', 'first_LH');
+save('../data_for_figs/score_SH.mat', 'score_SH');
+save('../data_for_figs/score_LH.mat', 'score_LH');
+
+%%
+
 % Remove 506
 score_SH(6,1) = nan;
 score_LH(6,1) = nan;

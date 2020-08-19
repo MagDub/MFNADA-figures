@@ -4,6 +4,10 @@ load('../data_for_figs/model_parameters_Q0uni.mat')
 nov_SH = model_parameters_Q0uni(:,6);
 nov_LH = model_parameters_Q0uni(:,7);
 
+%% Save
+save('../data_for_figs/nov_SH.mat', 'nov_SH');
+save('../data_for_figs/nov_LH.mat', 'nov_LH');
+
 %% Drugs
 load('../data_for_figs/drug_code.mat') %0: placebo, 1:amisulpride, 2:propranolol
 idx_plc = find(drug_code(:,2)==0);

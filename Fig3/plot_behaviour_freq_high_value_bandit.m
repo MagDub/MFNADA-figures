@@ -7,6 +7,13 @@ load('../data_for_figs/chosenOption.mat')
 exploit_SH_perc = (chosenOption.ABD.freq(:,1)+chosenOption.AB.freq(:,1)+chosenOption.BD.freq(:,1)+chosenOption.AD.freq(:,1))/4*100;
 exploit_LH_perc = (chosenOption.ABD.freq(:,4)+chosenOption.AB.freq(:,4)+chosenOption.BD.freq(:,4)+chosenOption.AD.freq(:,4))/4*100;
 
+%% Save
+high_value_SH = exploit_SH_perc;
+high_value_LH = exploit_LH_perc;
+
+save('../data_for_figs/high_value_SH.mat', 'high_value_SH');
+save('../data_for_figs/high_value_LH.mat', 'high_value_LH');
+
 %% Drugs
 load('../data_for_figs/drug_code.mat') %0: placebo, 1:amisulpride, 2:propranolol
 idx_plc = find(drug_code(:,2)==0);

@@ -10,6 +10,16 @@ for model = 1:size(mod.file_name,2)
    number_par_all(model) = mod.number_par{model};
 end
 
+%% Save
+
+models_mean = mean_all;
+models_std = stderror_all;
+models_desc = legend_all;
+
+save('../data_for_figs/models_desc.mat', 'models_desc');
+save('../data_for_figs/models_mean.mat', 'models_mean');
+save('../data_for_figs/models_std.mat', 'models_std');
+
 %% Figure
 
 legend_all{1} = 'thompson';

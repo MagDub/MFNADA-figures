@@ -18,6 +18,12 @@ pickedD_SH_perc = behaviour(:,9)/n_trials_SH;
 N_apples_of_selected_tree_SH=(pickedA_SH_perc*3+pickedB_SH_perc*1+pickedC_SH_perc*0+pickedD_SH_perc*1);
 N_apples_of_selected_tree_LH=(pickedA_LH_perc*3+pickedB_LH_perc*1+pickedC_LH_perc*0+pickedD_LH_perc*1);
 
+IG_SH = N_apples_of_selected_tree_SH;
+IG_LH = N_apples_of_selected_tree_LH;
+
+save('../data_for_figs/IG_SH.mat', 'IG_SH');
+save('../data_for_figs/IG_LH.mat', 'IG_LH');
+
 % Remove 506
 N_apples_of_selected_tree_SH(6,1) = nan;
 N_apples_of_selected_tree_LH(6,1) = nan;
