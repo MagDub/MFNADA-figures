@@ -1,4 +1,6 @@
 
+clear;
+
 %% Data
 load('../data_for_figs/model_selection_mat_q0.mat')
 
@@ -10,10 +12,14 @@ for model = 1:size(mod.file_name,2)
    number_par_all(model) = mod.number_par{model};
 end
 
+% rm 506
+all_models(:,6) = [];
+
+
 %% Save
 
-models_mean = mean_all;
-models_std = stderror_all;
+models_mean = nanmean(all_models,2)'*100;
+models_std = nanstd(all_models')'*100;
 models_desc = legend_all;
 
 save('../data_for_figs/models_desc.mat', 'models_desc');
