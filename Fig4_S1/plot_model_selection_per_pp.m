@@ -2,7 +2,7 @@
 clear;
 
 %% Data
-load('../data_for_figs/model_selection_mat_q0.mat')
+load('../../data/data_for_figs/model_selection_heuristics.mat')
 
 for model = 1:size(mod.file_name,2)
    all_models(model,:) = mod.mean_pp{model}';
@@ -34,15 +34,20 @@ legend_all{10} = 'hybrid + \epsilon';
 legend_all{11} = 'hybrid + \eta';
 legend_all{12} = 'hybrid + \epsilon + \eta';
 
+legend_all{13} = 'argmax';
+legend_all{14} = 'argmax + \epsilon';
+legend_all{15} = 'argmax + \eta';
+legend_all{16} = 'argmax + \epsilon + \eta';
+
 figure('Color','w');
-set(gcf,'Unit','centimeters','OuterPosition',[0 0 10 10]);
+set(gcf,'Unit','centimeters','OuterPosition',[0 0 12 10]);
 set(gca,'FontName','Arial','FontSize',10)
 hold on
 
 col_(1,:) = [0.803921580314636 0.878431379795074 0.968627452850342];
 
-x = 1:size(all_models,1)+2;
-x =[x(1:1+3), x(6:6+3), x(11:11+3)];
+x = 1:size(mean_all,2)+3;
+x =[x(1:4), x(6:9), x(11:14), x(16:19)];
 
 [highest_acc_pp,best_model_ind_pp] = max(all_models,[],1);
 
@@ -57,12 +62,12 @@ text(x(ind_notnul),val(ind_notnul),num2str(txt_val(ind_notnul)),'vert','bottom',
 box off
 
 ylabel('Number of subjects','FontName','Arial','Fontweight','bold','FontSize',11);
-set(gca,'YTick',0:10:100)
-ylim([0 25])
+set(gca,'YTick',0:5:100)
+ylim([0 22])
 
-xticks(1:size(all_models,1)+2);
-xticklabels([legend_all(1:1+3),{''}, legend_all(5:5+3),{''},legend_all(9:9+3)]);
-xlim([0,size(all_models,1)+3])
+xticks(1:numel(mean_all)+3);
+xticklabels([legend_all(1:4),{''}, legend_all(5:8),{''},legend_all(9:12),{''},legend_all(13:16)]);
+xlim([0,size(mean_all,2)+5])
 
 xtickangle(45)
 
