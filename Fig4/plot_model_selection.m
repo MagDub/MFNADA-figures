@@ -4,10 +4,11 @@ clear;
 %% Data
 load('../../data/data_for_figs/model_selection_heuristics.mat')
 
+
 for model = 1:size(mod.file_name,2)
    all_models(model,:) = mod.mean_pp{model}';
    legend_all{model} = mod.legend{model};
-    % number_par_all(model) = mod.number_par{model};
+   % number_par_all(model) = mod.number_par{model};
 end
 
 % rm 506
