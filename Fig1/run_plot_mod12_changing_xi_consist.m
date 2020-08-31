@@ -1,6 +1,6 @@
 
 sgm0_mat = 1.312;
-eta_mat = 0.1; %2.625;
+eta_mat = 2.625;
 Q0_mat = 3.200;
 
 part_num = 200;
@@ -14,8 +14,6 @@ load(strcat(sim_folder,'mat_mean_SEM_consistency.mat'));
 
 ind_1 = find(mat_mean_SEM_consistency(:,1)==xi_1);
 ind_2 = find(mat_mean_SEM_consistency(:,1)==xi_2);
-
-% picked low
 
 col = [0.803921580314636 0.878431379795074 0.968627452850342];
 

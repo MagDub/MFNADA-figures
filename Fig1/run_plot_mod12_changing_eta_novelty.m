@@ -15,8 +15,6 @@ load(strcat(sim_folder,'mat_mean_SEM_tree_novel.mat'));
 ind_1 = find(mat_mean_SEM_tree_novel(:,1)==eta_1);
 ind_2 = find(mat_mean_SEM_tree_novel(:,1)==eta_2);
 
-% picked novel
-
 col = [0.803921580314636 0.878431379795074 0.968627452850342];
 
 figure('Color','w');
