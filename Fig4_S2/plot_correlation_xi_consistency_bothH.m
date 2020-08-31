@@ -1,6 +1,6 @@
 
     %% Data
-    load('data_for_figs\model_parameters_Q0uni.mat')
+    load('../data_for_figs/model_parameters_Q0uni.mat')
     
     % xi
     xi_LH = model_parameters_Q0uni(:,5);
@@ -8,8 +8,8 @@
     xi_SH = model_parameters_Q0uni(:,4);
     xi_SH(6,1) = nan;
     
-    % picked D
-    load('D:\writing\MF\data_for_figs\consistency_freq.mat')
+    % consist
+    load('../data_for_figs/consistency_freq.mat')
     consist_SH = consistency_freq(:,2);
     consist_LH = consistency_freq(:,1);
     consist_SH(6,1) = nan;
@@ -40,13 +40,10 @@
     yticks((0:15:ylimmax))
 
     rho = corr([xi_LH; xi_SH],[consist_LH; consist_SH], 'rows','complete', 'Type','Pearson');
-%                 parameter_recov_mat(j,i) = rho;
-%                 x_legends{i} = tmp.settings.params.param_names{i};
     dummyh = line(nan, nan, 'Linestyle', 'none', 'Marker', 'none', 'Color', 'none');
     legend([dummyh],{['r=' num2str(rho)]}, 'Position',[0.476154848452753 0.845758786048899 0.41160220187672 0.112686977748615],'FontSize',15)
     legend boxoff;
 
-    % Export
-    out_dir = 'figs\correlations\';
-    addpath('D:\writing\export_fig')
-    export_fig([out_dir 'Fig_corr_xi_consist_bothH.tif'],'-nocrop','-r200')
+    %% Export
+    addpath('../../export_fig')
+    export_fig(['Fig_corr_xi_consist.tif'],'-nocrop','-r200')

@@ -1,6 +1,6 @@
 
     %% Data
-    load('data_for_figs\model_parameters_Q0uni.mat')
+    load('../data_for_figs/model_parameters_Q0uni.mat')
     
     % eta
     eta_SH = model_parameters_Q0uni(:,6);
@@ -8,8 +8,8 @@
     eta_LH = model_parameters_Q0uni(:,7);
     eta_LH(6,1) = nan;
  
-    % picked D
-    load('data_for_figs\behaviour.mat')
+    % picked novel
+    load('../data_for_figs/behaviour.mat')
     n_trials_SH = 200;
     n_trials_LH = 200;
     pickedC_SH_perc = behaviour(:,8)/n_trials_SH*100;
@@ -38,18 +38,14 @@
     xlim([0 xlimmax])
     ylim([0 ylimmax])
     yticks((0:15:ylimmax))
-%     xticks([0 0.1 0.2 0.3 0.4 0.5])
-%     plot([0,xlimmax-distancelinestop],[0,ylimmax-(distancelinestop*(ylimmax/xlimmax))],'Color','k', 'Linewidth', 0.4,'LineStyle','--');
     plot([0,xlimmax],[0,ylimmax],'Color','k', 'Linewidth', 0.4,'LineStyle','--');
 
     rho = corr([eta_SH; eta_LH],[pickedC_SH_perc; pickedC_LH_perc], 'rows','complete', 'Type','Pearson');
-%                 parameter_recov_mat(j,i) = rho;
-%                 x_legends{i} = tmp.settings.params.param_names{i};
+    
     dummyh = line(nan, nan, 'Linestyle', 'none', 'Marker', 'none', 'Color', 'none');
     legend([dummyh],{['r=' num2str(rho)]}, 'Position',[0.516210096783394 0.221197382540127 0.392265185878422 0.112686977748615],'FontSize',15)
     legend boxoff;
 
-    % Export
-    out_dir = 'figs\correlations\';
-    addpath('D:\writing\export_fig')
-    export_fig([out_dir 'Fig_corr_eta_pickedC_bothH.tif'],'-nocrop','-r200')
+    %% Export
+    addpath('../../export_fig')
+    export_fig(['Fig_corr_eta_novel.tif'],'-nocrop','-r200')
