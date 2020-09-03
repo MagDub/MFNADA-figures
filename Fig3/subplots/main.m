@@ -31,3 +31,5 @@ render_consistency(ybounds, increment, signif, hight_signif);
 % Export
 addpath('../../../export_fig')
 export_fig(['Fig3.tif'],'-nocrop','-r200')
+
+export_fig(['../../powerpoints/Fig3.tif'],'-nocrop','-r200')

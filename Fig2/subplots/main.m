@@ -28,3 +28,5 @@ render_score(ybounds, increment, signif, hight_signif);
 % Export
 addpath('../../../export_fig')
 export_fig(['Fig2.tif'],'-nocrop','-r200')
+
+export_fig(['../../powerpoints/Fig2.tif'],'-nocrop','-r200')

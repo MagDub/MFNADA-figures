@@ -14,3 +14,5 @@ render_param_recovery();
 % Export
 addpath('../../../export_fig')
 export_fig(['Fig4.tif'],'-nocrop','-r200')
+
+export_fig(['../../powerpoints/Fig4.tif'],'-nocrop','-r200')

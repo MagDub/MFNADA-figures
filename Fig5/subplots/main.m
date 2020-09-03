@@ -29,3 +29,5 @@ render_sgm0(ybounds, increment);
 % Export
 addpath('../../../export_fig')
 export_fig(['Fig5.tif'],'-nocrop','-r200')
+
+export_fig(['../../powerpoints/Fig5.tif'],'-nocrop','-r200')
