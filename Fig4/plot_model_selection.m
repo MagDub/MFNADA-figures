@@ -74,10 +74,10 @@ ylim(yrange)
 xticks(1:numel(mean_)+4);
 xticklabels([legend_all(1:4),{''}, legend_all(5:8),{''},legend_all(9:12),{''},legend_all(13:16)]);
 
+
 xtickangle(45)
 
 c=plot(0:x(end)+1,1/3*100*ones(size(0:x(end)+1)),'Color',cols(2,:),'LineWidth',1, 'LineStyle', ':');
-
 
 legend([bw c],{'Winning model'}, 'Position',[0.510570545087122 0.877599978724319 0.361878446452526 0.0666666650981234]);
 legend boxoff  
