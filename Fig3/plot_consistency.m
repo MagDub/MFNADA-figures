@@ -80,13 +80,16 @@ h = errorbar(x_ax([1 2 4 5 7 8]),...
     nanstd(consist_SH(idx_ami))./sqrt(numel_idx_ami) nanstd(consist_LH(idx_ami))./sqrt(numel_idx_ami)],'.','color','k');
 set(h,'Marker','none')
 
+legend([b2S b2L],{'Short horizon', 'Long horizon'}, 'Position',[0.155060659565985 0.810874177821108 0.339778999597328 0.121052628441861]);
+legend boxoff  
+
 xlim([0 4.5])   
 set(gca,'XTick',[0.75 2.25 3.75])
 set(gca,'XTickLabel',{'Noradrenaline','Placebo', 'Dopamine'});
 
 ylabel('Proportion of same choices [%]','FontName','Arial','Fontweight','bold','FontSize',12,'Interpreter','tex');
-set(gca,'YTick',30:10:100)
-ylim([34 89])
+set(gca,'YTick',0:20:110)
+ylim([30 105])
 
 
 %% Export

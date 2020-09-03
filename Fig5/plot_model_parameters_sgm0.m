@@ -78,6 +78,9 @@ h = errorbar(x_ax([1 2 4 5 7 8]),...
     nanstd(sgm0_SH(idx_ami))./sqrt(numel_idx_ami) nanstd(sgm0_LH(idx_ami))./sqrt(numel_idx_ami)],'.','color','k');
 set(h,'Marker','none')
 
+legend([b2S b2L],{'Short horizon', 'Long horizon'}, 'Position',[0.168872814262118 0.81087418498448 0.339778999597328 0.121052628441861]);
+legend boxoff  
+
 xlim([0 4.5])   
 set(gca,'XTick',[0.75 2.25 3.75])
 set(gca,'XTickLabel',{'Noradrenaline','Placebo', 'Dopamine'})

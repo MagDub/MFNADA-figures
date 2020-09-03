@@ -98,8 +98,8 @@ set(gca,'XTickLabel',{'Noradrenaline','Placebo', 'Dopamine'})
 
 
 ylabel('Proportion of draws [%]','FontName','Arial','Fontweight','bold','FontSize',12);
-set(gca,'YTick',0:3:100)
-ylim([0 max(max(pickedD_SH_perc),max(pickedD_LH_perc))])
+set(gca,'YTick',0:5:100)
+ylim([0 15.5])
 
 %% Export
 addpath('../../export_fig')

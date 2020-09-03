@@ -52,6 +52,8 @@ col.ami(2,:) = [0.584313750267029 0.388235300779343 0.388235300779343];
 
 x_ax = 0.5:0.5:4;
 
+% x_ax([2,5,8])=x_ax([2,5,8])+0.15;
+
 % Female
 b1S= bar(x_ax(1),nanmean(sgm0_mean(idx_prop_female)),'FaceColor',col.prop(1,:), 'FaceAlpha', 0.25, 'BarWidth',.5); 
 b2S = bar(x_ax(4),nanmean(sgm0_mean(idx_plc_female)),'FaceColor',col.plac(1,:), 'FaceAlpha', 0.25, 'BarWidth',.5);
@@ -83,7 +85,7 @@ set(h,'Marker','none')
 
 legend([b2S b2L],{'Female', 'Male'},'Location','northwest')
 
-xlim([0 4.5])   
+xlim([0 x_ax(8)+0.5])   
 set(gca,'XTick',[0.75 2.25 3.75])
 set(gca,'XTickLabel',{'Noradrenaline','Placebo', 'Dopamine'})
 

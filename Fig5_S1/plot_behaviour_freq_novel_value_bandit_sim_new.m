@@ -88,13 +88,16 @@ h = errorbar(x_ax([1 2 4 5 7 8]),...
     nanstd(pickedC_SH_perc(idx_ami))./sqrt(numel_idx_ami) nanstd(pickedC_LH_perc(idx_ami))./sqrt(numel_idx_ami)],'.','color','k');
 set(h,'Marker','none')
 
+legend([b2S b2L],{'Short horizon', 'Long horizon'}, 'Position',[0.155060659565985 0.810874177821108 0.339778999597328 0.121052628441861]);
+legend boxoff   
+
 xlim([0 4.5])   
 set(gca,'XTick',[0.75 2.25 3.75])
 set(gca,'XTickLabel',{'Noradrenaline','Placebo', 'Dopamine'})
 
 ylabel('Proportion of draws [%]','FontName','Arial','Fontweight','bold','FontSize',12);
-set(gca,'YTick',0:15:100)
-ylim([0 max(max(pickedC_SH_perc),max(pickedC_LH_perc))])
+set(gca,'YTick',0:20:100)
+ylim([0 83])
 
 
 %% Export
