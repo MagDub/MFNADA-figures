@@ -56,7 +56,7 @@ function [] = render_model_selection_pp_3()
     text(x(ind_notnul),val(ind_notnul),num2str(txt_val(ind_notnul)),'vert','bottom','horiz','center'); 
     box off
 
-    ylabel('Number of subjects','FontName','Arial','Fontweight','bold','FontSize',11);
+    ylabel('Number of subjects','FontName','Arial','Fontweight','bold','FontSize',12);
     set(gca,'YTick',0:15:100)
     ylim([0 40])
 
