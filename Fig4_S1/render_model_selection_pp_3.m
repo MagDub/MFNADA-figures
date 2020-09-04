@@ -71,7 +71,7 @@ function [] = render_model_selection_pp_3()
     set(gca,'box','off')
 
     % Number and title
-    text(0-0.2, 1+0.2,'a','Units', 'Normalized', 'VerticalAlignment', 'Top','FontSize', 26)
+    text(0-0.2, 1+0.17,'a','Units', 'Normalized', 'VerticalAlignment', 'Top','FontSize', 26)
     t=title('Best fitting model','FontSize', 18, 'FontName','Arial', 'Fontweight','normal');
 
 

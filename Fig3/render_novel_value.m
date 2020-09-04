@@ -94,7 +94,7 @@ function [] = render_novel_value(ybounds, increment)
     legend([b2S b2L],{'Short horizon', 'Long horizon'}, 'Location','NorthEast');
     legend boxoff  
     
-    text(0-0.2, 1+0.2,'b','Units', 'Normalized', 'VerticalAlignment', 'Top','FontSize', 26)
+    text(0-0.2, 1+0.2,'d','Units', 'Normalized', 'VerticalAlignment', 'Top','FontSize', 26)
     t1=title('Novel bandit','FontSize', 18, 'FontName','Arial', 'Fontweight','normal');
 
     xlim([0 4.5])   

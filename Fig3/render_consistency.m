@@ -98,7 +98,7 @@ function [] = render_consistency(ybounds, increment, signif, hight_signif)
     set(th,'visible','on','HorizontalAlignment','center');
   
     % Number and title
-    text(0-0.2, 1+0.2,'d','Units', 'Normalized', 'VerticalAlignment', 'Top','FontSize', 26)
+    text(0-0.2, 1+0.2,'c','Units', 'Normalized', 'VerticalAlignment', 'Top','FontSize', 26)
     t=title('Consistency','FontSize', 18, 'FontName','Arial', 'Fontweight','normal');
 
     xlim([0 4.5])   
