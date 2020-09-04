@@ -103,7 +103,7 @@ function [] = render_consistency(ybounds, increment, signif, hight_signif)
 
     xlim([0 4.5])   
     set(gca,'XTick',[0.75 2.25 3.75])
-    set(gca,'XTickLabel',{'Noradrenaline','Placebo', 'Dopamine'})
+    set(gca,'XTickLabel',{'Propranolol','Placebo', 'Amisulpride'})
     set(gca,'box','off')
 
     

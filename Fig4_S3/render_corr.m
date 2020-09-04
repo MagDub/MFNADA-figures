@@ -23,5 +23,7 @@ xlabel('Fitted value','FontName','Arial','Fontweight','bold','FontSize',12);
 text(0-0.2, 1+0.2,letter,'Units', 'Normalized', 'VerticalAlignment', 'Top','FontSize', 26)     
 title(title_,'FontSize', 18, 'FontName','Arial', 'Fontweight','normal');
 
+set(gca,'box','off')
+
 end
 

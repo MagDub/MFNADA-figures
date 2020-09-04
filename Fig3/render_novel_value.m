@@ -99,7 +99,7 @@ function [] = render_novel_value(ybounds, increment)
 
     xlim([0 4.5])   
     set(gca,'XTick',[0.75 2.25 3.75])
-    set(gca,'XTickLabel',{'Noradrenaline','Placebo', 'Dopamine'})
+    set(gca,'XTickLabel',{'Propranolol','Placebo', 'Amisulpride'})
     set(gca,'box','off')
 
     ylabel('Proportion of draws [%]','FontName','Arial','Fontweight','bold','FontSize',12);

@@ -1,7 +1,7 @@
 
 col = 1;
 
-for val = 2:10
+for val = 10
     
     apple_orig = imread(strcat('images_set1/apple_',int2str(col),'.png'));
 
@@ -12,3 +12,4 @@ for val = 2:10
     imwrite(apple_disp, strcat('apple_',int2str(val),'.png'))
 
 end
+

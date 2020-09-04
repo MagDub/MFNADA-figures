@@ -32,8 +32,8 @@ function [] = render_sim(ybounds, increment, data_SH, data_LH, letter, subplot_t
     set(gca,'box','off')
   
     % Number and title
-    text(0-0.2, 1+0.3,letter,'Units', 'Normalized', 'VerticalAlignment', 'Top','FontSize', 26)
-    title(subplot_title,'FontSize', 18, 'FontName','Arial', 'Fontweight','normal');
+    text(0-0.2, 1+0.2,letter,'Units', 'Normalized', 'VerticalAlignment', 'Top','FontSize', 26)
+    title(subplot_title,'FontSize', 14, 'FontName','Arial', 'Fontweight','normal');
     
 
 end

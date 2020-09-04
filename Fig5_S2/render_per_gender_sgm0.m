@@ -1,4 +1,4 @@
-function [] = render_per_gender_sgm0(ybounds, increment)
+function [] = render_per_gender_sgm0(ybounds, increment, signif, hight_signif, signif_1, hight_signif_1, signif_2, hight_signif_2)
      
     % Data
     load('../data_for_figs/model_parameters_Q0uni.mat')
@@ -91,13 +91,25 @@ function [] = render_per_gender_sgm0(ybounds, increment)
     set(gca,'XTickLabel',{'Noradrenaline','Placebo', 'Dopamine'})
     
     set(gca,'box','off')
+    
+    % Significance
+    mid_2 = (x_ax(4)+x_ax(5))/2;
+    mid_3 = (x_ax(7)+x_ax(8))/2;
+    plot([mid_2 mid_3],[1;1]*hight_signif+[-0.3; +0.1],'-k', 'LineWidth',1.5);
+    plot([mid_2 mid_3],[1;1]*hight_signif+[+0.1; -0.3],'-k', 'LineWidth',1.5);
+    th = text(mean([mid_2 mid_3]), hight_signif, signif,'FontSize', 17, 'FontName','Arial', 'Fontweight','normal');
+    set(th,'visible','on','HorizontalAlignment','center');
+    th_2 = text(mid_2, hight_signif_1, signif_1,'FontSize', 17, 'FontName','Arial', 'Fontweight','normal');
+    th_3 = text(mid_3, hight_signif_2, signif_2,'FontSize', 17, 'FontName','Arial', 'Fontweight','normal');
+    set(th_2,'visible','on','HorizontalAlignment','center');
+    set(th_3,'visible','on','HorizontalAlignment','center');
 
     % Number and title
     title(['\fontsize{18} Prior variance{\fontsize{22} \sigma}_0'],'interpreter','tex','Fontweight','normal','FontName','Arial');
 
     xlim([0 4.5])   
     set(gca,'XTick',[0.75 2.25 3.75])
-    set(gca,'XTickLabel',{'Noradrenaline','Placebo', 'Dopamine'})
+    set(gca,'XTickLabel',{'Propranolol','Placebo', 'Amisulpride'})
     set(gca,'box','off')
 
     ylabel('Best-fit parameter value','FontName','Arial','Fontweight','bold','FontSize',12);
