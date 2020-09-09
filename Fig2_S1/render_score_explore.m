@@ -63,12 +63,12 @@ function [] = render_score_explore()
     set(gca,'YTick',-3:1:3)
     set(gca,'XTick',1:1:6)
     ylabel({'Increase in reward'}','FontName','Arial','Fontweight','bold','FontSize',12);
-    xlabel('Sample')
+    xlabel('Draw')
     
     set(gca,'box','off')
 
     % Number and title
-    text(0-0.2, 1+0.2,'b','Units', 'Normalized', 'VerticalAlignment', 'Top','FontSize', 26)
+    text(0-0.2, 1+0.2,'d','Units', 'Normalized', 'VerticalAlignment', 'Top','FontSize', 26)
     t=title('Started with exploration','FontSize', 18, 'FontName','Arial', 'Fontweight','normal');
 
 

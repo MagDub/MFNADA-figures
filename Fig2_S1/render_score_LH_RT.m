@@ -30,13 +30,14 @@ function [] = render_score_LH_RT()
     set(gca,'YTick',0:750:3000)
     set(gca,'XTick',1:6)
     ylabel({'Reaction time (ms)'}','FontName','Arial','Fontweight','bold','FontSize',12);
-    xlabel('Sample')
+    xlabel('Draw')
     
     set(gca,'box','off')
 
     % Number and title
-    text(0-0.2, 1+0.2,'c','Units', 'Normalized', 'VerticalAlignment', 'Top','FontSize', 26)
-    t=title('Reaction times','FontSize', 18, 'FontName','Arial', 'Fontweight','normal');
+    text(0-0.2, 1+0.2,'b','Units', 'Normalized', 'VerticalAlignment', 'Top','FontSize', 26)
+    t=title('Response times','FontSize', 18, 'FontName','Arial', 'Fontweight','normal');
+   
 
 
 end
