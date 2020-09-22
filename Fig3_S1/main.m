@@ -4,7 +4,7 @@ set(gcf,'Unit','centimeters','OuterPosition',[0 0 10 10]);
 set(gca,'FontName','Arial','FontSize',10)
 hold on;
 
-render_RT_3_bandits();
+render_RT_4_bandits();
 
 % Export
 addpath('../../export_fig')

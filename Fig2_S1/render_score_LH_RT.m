@@ -1,6 +1,6 @@
 function [] = render_score_LH_RT()
 
-   load('../data_for_figs/RT_all_LH_desc.mat')
+    load('../data_for_figs/RT_all_LH_desc.mat')
     load('../data_for_figs/RT_all_LH.mat')
 
     % remove 506

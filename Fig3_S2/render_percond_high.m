@@ -64,6 +64,13 @@ function [] = render_percond_high(ybounds, increment)
     ylim(ybounds)
     
     set(gca,'box','off')
+    
+%     % Significance
+%     th = text(mean(x_ax([6])), hight_signif(1), signif{1},'FontSize', 17, 'FontName','Arial', 'Fontweight','normal');
+%     set(th,'visible','on','HorizontalAlignment','center');
+%     
+%     th = text(mean(x_ax([12])), hight_signif(2), signif{2},'FontSize', 17, 'FontName','Arial', 'Fontweight','normal');
+%     set(th,'visible','on','HorizontalAlignment','center');
 
     % Number and title
     text(0-0.2, 1+0.2,'a','Units', 'Normalized', 'VerticalAlignment', 'Top','FontSize', 26)

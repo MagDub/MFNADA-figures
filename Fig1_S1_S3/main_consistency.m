@@ -40,8 +40,8 @@ data_SH = tmp_SH.mat_mean_SEM_consistency([1 3],2:3);
 data_LH = tmp_LH.mat_mean_SEM_consistency([2 4],2:3);
 render_sim(ybounds, increment, data_SH, data_LH, 'd', {'UCB ','exploration simulation'}, {'Proportion of',' same choices [%]'});
 
-% Export
-addpath('../../export_fig')
-export_fig(['Fig1S2.tif'],'-nocrop','-r200')
-
-export_fig(['../powerpoints/Fig1S2.tif'],'-nocrop','-r200')
+% % Export
+% addpath('../../export_fig')
+% export_fig(['Fig1S2.tif'],'-nocrop','-r200')
+% 
+% export_fig(['../powerpoints/Fig1S2.tif'],'-nocrop','-r200')

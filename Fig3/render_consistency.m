@@ -105,7 +105,6 @@ function [] = render_consistency(ybounds, increment, signif, hight_signif)
     set(gca,'XTick',[0.75 2.25 3.75])
     set(gca,'XTickLabel',{'Propranolol','Placebo', 'Amisulpride'})
     set(gca,'box','off')
-
     
     ylabel({'Proportion of','same choices [%]'}','FontName','Arial','Fontweight','bold','FontSize',12);
     set(gca,'YTick',0:increment:100)
