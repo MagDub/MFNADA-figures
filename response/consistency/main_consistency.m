@@ -22,6 +22,6 @@ render_sim(ybounds, increment, data, 'b', {'Simulation of value-free','random ex
 
 % Export
 addpath('../../../export_fig')
-export_fig('Fig_sim.tif','-nocrop','-r200')
+export_fig('Fig_sim_consist.tif','-nocrop','-r200')
 
 % export_fig(['../powerpoints/Fig1S2.tif'],'-nocrop','-r200')

@@ -36,9 +36,9 @@ function [] = render_corr_xi_consist()
     
     yticks((0:15:ylimmax))
 
-    rho = corr([xi_LH; xi_SH],[consist_LH; consist_SH], 'rows','complete', 'Type','Pearson');
+    [rho, p] = corr([xi_LH; xi_SH],[consist_LH; consist_SH], 'rows','complete', 'Type','Pearson');
     dummyh = line(nan, nan, 'Linestyle', 'none', 'Marker', 'none', 'Color', 'none');
-    legend([dummyh],{['r=' num2str(rho)]}, 'Location','NorthEast','FontSize',15)
+    legend([dummyh],{['r=' num2str(rho,3), '\newlinep<0.001']},'Location','NorthEast','FontSize',15)
     legend boxoff;
     
     set(gca,'box','off')

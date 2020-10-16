@@ -50,7 +50,7 @@ function [] = render_percond_novel(ybounds, increment)
     xlim([0 2.8*2])   
     set(gca,'XTick',[x_ax(3) x_ax(6) x_ax(9) x_ax(12)])
 
-    labels = {'No low-value', 'No novel', 'No standard', 'No certain-standard'};
+    labels = {strcat('[certain-standard, \newline',32,32,'standard, novel]'), strcat(''), strcat('[certain-standard, \newline',32,32,32,32,32,32,32,32,32,32,32,32,'novel, low]'), strcat('[standard, \newline','novel, low]')};
     xtickangle(45)
 
     a = gca;

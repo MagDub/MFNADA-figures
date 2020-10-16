@@ -37,10 +37,10 @@ function [] = render_corr_eta_novel()
     yticks((0:15:ylimmax))
     plot([0,xlimmax],[0,ylimmax],'Color','k', 'Linewidth', 0.4,'LineStyle','--');
 
-    rho = corr([eta_SH; eta_LH],[pickedC_SH_perc; pickedC_LH_perc], 'rows','complete', 'Type','Pearson');
+    [rho, p] = corr([eta_SH; eta_LH],[pickedC_SH_perc; pickedC_LH_perc], 'rows','complete', 'Type','Pearson');
     
     dummyh = line(nan, nan, 'Linestyle', 'none', 'Marker', 'none', 'Color', 'none');
-    legend([dummyh],{['r=' num2str(rho)]}, 'Location','SouthEast','FontSize',15)
+    legend([dummyh],{['r=' num2str(rho,3), '\newlinep<0.001']},'Location','SouthEast','FontSize',15)
     legend boxoff;
     
     set(gca,'box','off')

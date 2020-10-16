@@ -5,7 +5,7 @@ function [] = render_model_selection(ybounds, increment)
     load('../../data/data_for_figs/model_selection_heuristics.mat')
 
 
-    for model = 1:size(mod.file_name,2)
+    for model = 1:12%size(mod.file_name,2)
        all_models(model,:) = mod.mean_pp{model}';
        legend_all{model} = mod.legend{model};
        % number_par_all(model) = mod.number_par{model};
@@ -42,41 +42,54 @@ function [] = render_model_selection(ybounds, increment)
     legend_all{10} = 'hybrid + \epsilon';
     legend_all{11} = 'hybrid + \eta';
     legend_all{12} = 'hybrid + \epsilon + \eta';
-
-    legend_all{13} = 'argmax';
-    legend_all{14} = 'argmax + \epsilon';
-    legend_all{15} = 'argmax + \eta';
-    legend_all{16} = 'argmax + \epsilon + \eta';
+    
+%     legend_all{13} = 'null value';
+%     legend_all{14} = 'null value + \epsilon';
+%     legend_all{15} = 'null value + \eta';
+%     legend_all{16} = 'null value + \epsilon + \eta';
+    
+%     legend_all{17} = 'thompson + softmax';
+%     legend_all{18} = 'thompson + softmax + \epsilon';
+%     legend_all{19} = 'thompson + softmax+ \eta';
+%     legend_all{20} = 'thompson + softmax + \epsilon + \eta';
+%     
+%     legend_all{21} = 'UCB + argmax';
+%     legend_all{22} = 'UCB + argmax + \epsilon';
+%     legend_all{23} = 'UCB + argmax+ \eta';
+%     legend_all{24} = 'UCB + argmax + \epsilon + \eta';
 
     cols(1,:) = [0.803921580314636 0.878431379795074 0.968627452850342]; 
     cols(2,:) = [0 57 94]/255; % Color chance level 
     cols(3,:) = [0.39215686917305 0.474509805440903 0.635294139385223]; 
 
-    x = 1:size(mean_,1)+4;
-    x =[x(1:4), x(6:9), x(11:14), x(16:19)];
+    x = [1:4 6:9 11:14]; %[1:4 6:9 11:14 16:19 21:24 26:29];
 
     b = bar(x,mean_,'FaceColor',cols(1,:),'BarWidth',.7);  hold on;
+    
+    text(x([4])+0.25,mean_([4])+1.2,['1^{st}'],'vert','bottom','horiz','center','FontName','Arial','Fontweight','bold','FontSize',12); 
+    text(x([8])+0.25,mean_([8])+1.2,['2^{nd}'],'vert','bottom','horiz','center','FontName','Arial','Fontweight','bold','FontSize',12);
+    text(x([12])+0.25,mean_([12])+1.2,['3^{rd}'],'vert','bottom','horiz','center','FontName','Arial','Fontweight','bold','FontSize',12);
+    box off
 
     bw = bar(x(4),mean_(4),'FaceColor',cols(3,:),'BarWidth',.7);   
 
     h = errorbar(x,mean_,std_/sqrt(59),std_/sqrt(59),'.','color','k');    
     set(h,'Marker','none')
     
-    legend([bw],{'Winning model'}, 'Location','NorthEast','FontSize',11);
+    c=plot(0:x(end)+1,1/3*100*ones(size(0:x(end)+1)),'Color',cols(2,:),'LineWidth',1, 'LineStyle', ':');
+
+    legend([bw],{'Winning model'}, 'Position',[0.310453400503778 0.837078651685393 0.153022670025189 0.0692883895131086],'FontSize',12);
     legend boxoff 
     
     ylabel({'Held-out data likelihood [%]'},'FontName','Arial','Fontweight','bold','FontSize',12);
     set(gca,'YTick',0:increment:100)
     ylim(ybounds)
 
-    set(gca,'XTick',1:numel(mean_)+3)
-    set(gca,'XTickLabel',[legend_all(1:4),{''}, legend_all(5:8),{''},legend_all(9:12),{''},legend_all(13:16)])
+    xticks(x)
+    xticklabels(legend_all);
     set(gca,'box','off')
 
     xtickangle(45)
-
-    c=plot(0:x(end)+1,1/3*100*ones(size(0:x(end)+1)),'Color',cols(2,:),'LineWidth',1, 'LineStyle', ':');
-
 
     % Number and title
     text(0-0.15, 1+0.18,'a','Units', 'Normalized', 'VerticalAlignment', 'Top','FontSize', 26)

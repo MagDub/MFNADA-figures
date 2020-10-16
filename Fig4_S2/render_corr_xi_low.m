@@ -39,9 +39,9 @@ function [] = render_corr_xi_low()
     xticks([0 0.1 0.2 0.3 0.4 0.5])
     plot([0,xlimmax],[0,ylimmax],'Color','k', 'Linewidth', 0.4,'LineStyle','--');
 
-    rho = corr([xi_LH; xi_SH],[pickedD_LH_perc; pickedD_SH_perc], 'rows','complete', 'Type','Pearson');
+    [rho, p] = corr([xi_LH; xi_SH],[pickedD_LH_perc; pickedD_SH_perc], 'rows','complete', 'Type','Pearson');
     dummyh = line(nan, nan, 'Linestyle', 'none', 'Marker', 'none', 'Color', 'none');
-    legend([dummyh],{['r=' num2str(rho)]},'Location','SouthEast','FontSize',15)
+    legend([dummyh],{['r=' num2str(rho,3), '\newlinep<0.001']},'Location','SouthEast','FontSize',15)
     legend boxoff;
     
     set(gca,'box','off')

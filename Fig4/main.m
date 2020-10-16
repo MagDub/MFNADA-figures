@@ -1,11 +1,11 @@
 figure('Color','w');
-set(gcf,'Unit','centimeters','OuterPosition',[0 0 26 12]);
+set(gcf,'Unit','centimeters','OuterPosition',[0 0 28 12]);
 set(gca,'FontName','Arial','FontSize',10)
 hold on;
 
 subplot(1,2,1)
-ybounds = [38 60.5];
-increment = 5;
+ybounds = [47 59];
+increment = 3;
 render_model_selection(ybounds, increment);
 
 subplot(1,2,2)
