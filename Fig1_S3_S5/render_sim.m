@@ -8,16 +8,16 @@ function [] = render_sim(ybounds, increment, data_SH, data_LH, letter, subplot_t
     h(1) = bar([0],data_SH(1,1),'FaceColor',col, 'FaceAlpha', 0.2, 'BarWidth',0.9); hold on;
     errorbar([0],data_SH(1,1),data_SH(1,2)*sqrt(part_num),'.','color','k', 'LineWidth',0.8); hold on;
 
-    h(2) = bar([1],data_LH(1,1),'FaceColor',col, 'FaceAlpha', 1, 'BarWidth',0.9); hold on;
-    errorbar([1],data_LH(1,1),data_LH(1,2)*sqrt(part_num),'.','color','k', 'LineWidth',0.8); hold on;
-
-    h(3) = bar([3],data_SH(2,1),'FaceColor',col, 'FaceAlpha', 0.2, 'BarWidth',0.9); hold on;
-    errorbar([3],data_SH(2,1),data_SH(2,2)*sqrt(part_num),'.','color','k', 'LineWidth',0.8); hold on;
+    h(2) = bar([1],data_SH(2,1),'FaceColor',col, 'FaceAlpha', 1, 'BarWidth',0.9); hold on;
+    errorbar([1],data_SH(2,1),data_SH(2,2)*sqrt(part_num),'.','color','k', 'LineWidth',0.8); hold on;
+    
+    h(3) = bar([3],data_LH(1,1),'FaceColor',col, 'FaceAlpha', 0.2, 'BarWidth',0.9); hold on;
+    errorbar([3],data_LH(1,1),data_LH(1,2)*sqrt(part_num),'.','color','k', 'LineWidth',0.8); hold on;
 
     h(4) = bar([4],data_LH(2,1),'FaceColor',col, 'FaceAlpha', 1, 'BarWidth',0.9); hold on;
     errorbar([4],data_LH(2,1),data_LH(2,2)*sqrt(part_num),'.','color','k', 'LineWidth',0.8); hold on;
 
-    leg1 = legend(h(1:2), 'Short horizon', 'Long horizon');
+    leg1 = legend(h(1:2), 'Low exploration', 'High exploration');
     set(leg1,'Location','NorthEast');
     legend boxoff;
     
@@ -28,7 +28,7 @@ function [] = render_sim(ybounds, increment, data_SH, data_LH, letter, subplot_t
 
     xlim([-1 5])
     xticks([0.5 3.5])
-    xticklabels({'Low exploration','High exploration'});
+    xticklabels({'Short Horizon','Long Horizon'});
     set(gca,'box','off')
   
     % Number and title
